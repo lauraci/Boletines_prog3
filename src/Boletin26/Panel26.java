@@ -2,14 +2,17 @@ package Boletin26;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-    public class Panel26 {
+public class Panel26 implements ActionListener {
         JFrame marco;
         JPanel panel;
         JButton boton1, boton2;
         JLabel etiqueta1, etiqueta2;
         JTextField lineaTexto1, lineaTexto2;
         JTextArea areaTexto;
+
 
 
         public void crearPanel(){
@@ -65,9 +68,25 @@ import java.awt.*;
             panel.add(boton2);
             panel.add(areaTexto);
 
+            boton1.addActionListener(this);
+            boton2.addActionListener(this);
+
             marco.add(panel);
             marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //cerramos la aplicación
             marco.setVisible(true);
         }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==boton1){
+                areaTexto.setText("Hola "+ lineaTexto1.getText() + "!");
+            }
+            if (e.getSource()==boton2){
+                areaTexto.setText("");
+                lineaTexto1.setText("");
+            }
+
+
     }
+}
 
