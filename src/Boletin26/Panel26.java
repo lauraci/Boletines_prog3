@@ -28,7 +28,7 @@ public class Panel26 implements ActionListener {
             boton2=new JButton("LIMPAR");
 
 
-            //Le damos características a los componentessiiii
+            //Le damos características a los compon entessiiii
 
             panel.setLayout(null);
             marco.setSize(650,650);
